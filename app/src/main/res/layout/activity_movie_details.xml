@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    tools:context=".Activities.MovieDetailsActivity">
+
+    <include
+        android:id="@+id/toolbarLayout"
+        layout="@layout/toolbar_layout" />
+
+    <RelativeLayout
+        android:id="@+id/youtubeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbarLayout"
+        android:background="@color/black">
+
+        <fragment
+            android:id="@+id/fragYoutube"
+            android:name="com.google.android.youtube.player.YouTubePlayerFragment"
+            android:layout_width="match_parent"
+            android:layout_height="220dp" />
+
+        <TextView
+            android:id="@+id/youtubeError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/error_unable_to_load"
+            android:textColor="@color/white"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/youtubeLayout"
+        android:fillViewport="false"
+        android:orientation="vertical"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/movieDetailLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/imgCard"
+                    android:layout_width="170dp"
+                    android:layout_height="255dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:scaleType="fitXY"
+                    android:visibility="gone"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="3dp">
+
+                    <ImageView
+                        android:id="@+id/imgWallpaper"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/show_movie_poster" />
+                </androidx.cardview.widget.CardView>
+
+                <RelativeLayout
+                    android:id="@+id/detailLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_toEndOf="@+id/imgCard">
+
+                    <TextView
+                        android:id="@+id/txtRating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/bullet1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="3dp"
+                        android:layout_toEndOf="@id/txtRating"
+                        android:text="@string/u2022"
+                        android:textColor="@color/black"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/txtDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/bullet1"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/bullet2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="3dp"
+                        android:layout_toEndOf="@id/txtDate"
+                        android:text="@string/u2022"
+                        android:textColor="@color/black"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/txtTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/bullet2"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/txtMovieTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtRating"
+                        android:textColor="@color/black"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:id="@+id/txtGenre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txtMovieTitle" />
+
+
+                    <TextView
+                        android:id="@+id/streamAvailable"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txtGenre"
+                        android:layout_marginTop="7dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/streamOnNetflix"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_below="@id/txtGenre"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_toEndOf="@id/streamAvailable"
+                        android:visibility="gone" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/streamOnAmazon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_below="@id/txtGenre"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_toEndOf="@id/streamOnNetflix"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/Cast"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/streamAvailable"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtCast"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/Cast"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/black" />
+
+
+                </RelativeLayout>
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmer_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <include layout="@layout/shimmer_layout_views" />
+                </com.facebook.shimmer.ShimmerFrameLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/movieDetailLayout"
+                android:layout_marginTop="10dp">
+
+                <RelativeLayout
+                    android:id="@+id/storylayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:id="@+id/txtstory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtDescription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txtstory"
+                        android:justificationMode="inter_word"
+                        android:paddingEnd="15dp"
+                        android:textColor="@color/black"
+                        android:visibility="invisible" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/storylayout"
+                    android:layout_marginStart="15dp"
+                    android:text="@string/more"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/moreMoviesRecyclerView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/more"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
+
+
+

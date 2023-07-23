@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="170dp"
+    android:layout_height="220dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/spinKit"
+            style="@style/SpinKitView.ThreeBounce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:SpinKit_Color="@color/blue" />
+
+        <ImageView
+            android:id="@+id/imgPoster"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/show_movie_poster"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
+            android:layout_alignBottom="@+id/imgPoster"
+            android:layout_centerHorizontal="true"
+            android:background="@color/trans_black"
+            android:gravity="center"
+            android:paddingHorizontal="5dp"
+            android:text="@string/movie_title"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/txtRating"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignEnd="@+id/imgPoster"
+            android:background="@color/blue"
+            android:gravity="center"
+            android:text="@string/_0_0"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
+
+
+

@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Moviepedia</string>
+    <string name="search_movies">Search Movies</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="top_rated">Top Rated</string>
+    <string name="popular">Popular</string>
+    <string name="developed_by_abdul_muqeet">Developed by Abdul Muqeet</string>
+    <string name="app_logo">App Logo</string>
+    <string name="_0_0">0.0</string>
+    <string name="movie_title">Movie Title</string>
+    <string name="show_movie_poster">Show Movie Poster</string>
+    <string name="error_message">Error Message</string>
+    <string name="try_again">try Again</string>
+    <string name="retry">Retry</string>
+    <string name="retry_to_connect_to_internet">Retry to connect to internet</string>
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="check_internet_connection">Check internet connection</string>
+    <string name="genres">genres</string>
+    <string name="cast">Cast:-</string>
+    <string name="actor_name">Actor Name</string>
+    <string name="release_date">Release Date:</string>
+    <string name="date">Date</string>
+    <string name="u2022"> • </string>
+    <string name="zerozero">0.0</string>
+    <string name="time">Time</string>
+    <string name="story">Story:</string>
+    <string name="description">Description</string>
+    <string name="error_unable_to_load">Trailer not found</string>
+    <string name="search_by_name">Search by Name</string>
+    <string name="search">Search</string>
+    <string name="nothing_to_show">Nothing to show</string>
+    <string name="more">See More:</string>
+    <string name="available_on">Available On:</string>
+    <string name="threedot">...</string>
+    <string name="more_view">More View</string>
+    <string name="view_more">View More</string>
+    <string name="no_internet_connection">No Internet Connection</string>
+
+</resources>
